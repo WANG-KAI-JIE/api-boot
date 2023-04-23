@@ -23,6 +23,8 @@ public interface SysUserConvert {
 
     UserDetail convertDetail(SysUserEntity entity);
 
+    SysUserVO convert(UserDetail detail);
+
 
     List<SysUserVO> converList(List<SysUserEntity> list);
 
