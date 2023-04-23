@@ -10,6 +10,7 @@
     <modules>
         <module>api-base</module>
         <module>api-admin-core</module>
+        <module>api-server</module>
     </modules>
 
     <modelVersion>4.0.0</modelVersion>
