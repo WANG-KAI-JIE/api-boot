@@ -36,6 +36,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>top.kjwang</groupId>
+            <artifactId>api-admin-biz</artifactId>
+            <version>${revision}</version>
+        </dependency>
     </dependencies>
 
 
