@@ -12,6 +12,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import top.kjwang.common.exception.ServerException;
 import top.kjwang.rbac.service.SysAuthService;
+import top.kjwang.rbac.service.SysCaptchaService;
 import top.kjwang.rbac.vo.SysAccountLoginVO;
 import top.kjwang.rbac.vo.SysTokenVO;
 import top.kjwang.security.cache.TokenStoreCache;
@@ -29,9 +30,15 @@ import top.kjwang.security.utils.TokenUtils;
 public class SysAuthServiceImpl implements SysAuthService {
     private final TokenStoreCache tokenStoreCache;
     private final AuthenticationManager authenticationManager;
+    private final SysCaptchaService sysCaptchaService;
 
     @Override
     public SysTokenVO loginByAccount(SysAccountLoginVO login) {
+        // 如果不需要验证码，可以在这里去掉
+        boolean flag = sysCaptchaService.validate(login.getKey(),login.getCaptcha());
+        if (!flag){
+            throw new ServerException("验证码错误");
+        }
         Authentication authentication;
         try {
             // 用户认证
