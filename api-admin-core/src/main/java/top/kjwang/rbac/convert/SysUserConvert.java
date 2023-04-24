@@ -19,13 +19,7 @@ import java.util.List;
 public interface SysUserConvert {
     SysUserConvert INSTANCE = Mappers.getMapper(SysUserConvert.class);
 
-    SysUserEntity convert(SysUserVO vo);
-
-    UserDetail convertDetail(SysUserEntity entity);
-
+    SysUserVO convert(SysUserEntity entity);
     SysUserVO convert(UserDetail detail);
-
-
-    List<SysUserVO> converList(List<SysUserEntity> list);
-
+    UserDetail convertDetail(SysUserEntity entity);
 }
