@@ -1,10 +1,20 @@
 {
   "devDependencies": {
+    "conventional-changelog-cli": "^2.2.2",
     "cz-customizable": "^7.0.0"
   },
   "config": {
     "commitizen": {
       "path": "node_modules/cz-customizable"
     }
+  },
+  "dependencies": {
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "init": "^0.1.2"
+  },
+  "scripts": {
+    "commit": "cz",
+    "changelog": "conventional-changelog -p angular -u -i CHANGELOG.md -s -r 0"
   }
 }
