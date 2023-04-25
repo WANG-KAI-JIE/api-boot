@@ -22,7 +22,7 @@ import java.util.Map;
  */
 
 @RestController
-@RequestMapping
+@RequestMapping("/sys/index")
 @Tag(name = "首页统计")
 @AllArgsConstructor
 public class IndexController {
