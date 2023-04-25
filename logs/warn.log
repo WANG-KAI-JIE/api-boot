@@ -43,3 +43,4 @@
 2023-04-25 13:05:21.845 [MakuHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - MakuHikariCP - Thread starvation or clock leap detected (housekeeper delta=16m28s415ms).
 2023-04-25 13:10:14.627 [MakuHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - MakuHikariCP - Thread starvation or clock leap detected (housekeeper delta=4m22s780ms).
 2023-04-25 13:16:08.257 [MakuHikariCP housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - MakuHikariCP - Thread starvation or clock leap detected (housekeeper delta=5m23s617ms).
+2023-04-25 14:11:46.442 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
