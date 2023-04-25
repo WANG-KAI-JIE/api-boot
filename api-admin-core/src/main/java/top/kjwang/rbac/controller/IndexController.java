@@ -37,8 +37,8 @@ public class IndexController {
 
     @GetMapping("statistics2")
     @Operation(summary = "统计组件2")
-    public Result<BarVO> getStatistics2() {
-        BarVO barVO = indexService.statistics2();
+    public Result<BarVO> getStatistics2(String type) {
+        BarVO barVO = indexService.statistics2(type);
         return Result.ok(barVO);
     }
 

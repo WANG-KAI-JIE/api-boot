@@ -21,11 +21,11 @@ public interface IndexService {
     List<PanelVO> statistics1();
 
     /**
-     * 后台首页统计2:echarts 柱状图
+     * 后台首页统计2:根据类型 获取 echarts 柱状图数据
      *
      * @return List<PanelVO>
      */
-    BarVO statistics2();
+    BarVO statistics2(String type);
 
     /**
      * 后台首页统计3:分类统计标签
