@@ -17,7 +17,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>top.kjwang</groupId>
     <artifactId>api-boot</artifactId>
-    <version>${revision}</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <description>多模块 API 模版项目父工程</description>
 
