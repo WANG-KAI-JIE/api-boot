@@ -71,4 +71,10 @@ public class NoticeServiceImpl extends BaseServiceImpl<NoticeDao, NoticeEntity> 
         wrapper.like(StrUtil.isNotBlank(query.getTitle()), NoticeEntity::getTitle, query.getTitle());
         return wrapper;
     }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void delete(List<Long> ids){
+        removeByIds(ids);
+    }
 }
