@@ -3,6 +3,8 @@ package top.kjwang.rbac.service;
 import top.kjwang.mybatis.service.BaseService;
 import top.kjwang.rbac.entity.SysUserRoleEntity;
 
+import java.util.List;
+
 /**
  * @author kjwang
  * @date 2023/4/23 23:00
@@ -10,4 +12,5 @@ import top.kjwang.rbac.entity.SysUserRoleEntity;
  */
 
 public interface SysUserRoleService extends BaseService<SysUserRoleEntity> {
+    List<Long> getRoleIdList(Long id);
 }
