@@ -19,6 +19,7 @@ import java.util.Map;
 public interface SysUserDao extends BaseDao<SysUserEntity> {
     /**
      * 根据用户名查找用户
+     *
      * @param username
      * @return SysUserEntity
      */

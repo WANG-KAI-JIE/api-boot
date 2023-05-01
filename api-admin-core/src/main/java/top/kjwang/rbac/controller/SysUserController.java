@@ -44,19 +44,6 @@ public class SysUserController {
     private final SysUserService sysUserService;
 //    private final SysUserRoleService sysUserRoleService;
 
-    @PostMapping("password")
-    @Operation(summary = "修改密码")
-    public Result<String> password(@RequestBody @Valid SysUserPasswordVO vo) {
-        // 原密码不正确
-        UserDetail user = SecurityUser.getUser();
-        if (!passwordEncoder.matches(vo.getOldPassword(), user.getPassword())) {
-            return Result.error("原密码不正确");
-        }
-        // 修改密码
-        sysUserService.updatePassword(user.getId(), passwordEncoder.encode(vo.getNewPassword()));
-        return Result.ok();
-    }
-
     @PostMapping("info")
     @Operation(summary = "获取登录用户信息")
     public Result<SysAuthVO> info() {
@@ -70,6 +57,19 @@ public class SysUserController {
         //3 获得用户授权信息
         vo.setAuthority(sysMenuService.getUserAuthority(userDetail));
         return Result.ok(vo);
+    }
+
+    @PostMapping("password")
+    @Operation(summary = "修改密码")
+    public Result<String> password(@RequestBody @Valid SysUserPasswordVO vo) {
+        // 原密码不正确
+        UserDetail user = SecurityUser.getUser();
+        if (!passwordEncoder.matches(vo.getOldPassword(), user.getPassword())) {
+            return Result.error("原密码不正确");
+        }
+        // 修改密码
+        sysUserService.updatePassword(user.getId(), passwordEncoder.encode(vo.getNewPassword()));
+        return Result.ok();
     }
 
     @GetMapping("page")

@@ -55,16 +55,21 @@ public class SysUserServiceImpl extends BaseServiceImpl<SysUserDao, SysUserEntit
         // 分页查询
 		IPage<SysUserEntity> page =	getPage(query);
 		params.put(Constant.PAGE, page);
+        System.out.println(baseMapper.getList(params));
         // 获得数据列表
 		List<SysUserEntity>	list = baseMapper.getList(params);
 		return new PageResult<>(SysUserConvert.INSTANCE.convertList(list), page.getTotal());
     }
 
     private Map<String,Object> getParams(SysUserQuery query) {
+        System.out.println(query);
         Map<String,Object> params = new HashMap<>();
         params.put("username",query.getUsername());
+        params.put("realName",query.getRealName());
         params.put("mobile",query.getMobile());
         params.put("gender",query.getGender());
+        params.put("beginTime",query.getBeginTime());
+        params.put("endTime",query.getEndTime());
         return params;
     }
 
