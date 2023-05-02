@@ -55,7 +55,7 @@ public class SysMenuController {
 	@GetMapping("list")
 	@Operation(summary = "菜单列表")
 	@Parameter(name = "type", description = "菜单类型 0：菜单 1：按钮  2：接口  null：全部")
-	@PreAuthorize("hasAuthority('sys:menu:page')")
+	@PreAuthorize("hasAuthority('sys:menu:list')")
 	public Result<List<SysMenuVO>> list(Integer type) {
 		List<SysMenuVO> list = sysMenuService.getMenuList(type);
 		return Result.ok(list);
