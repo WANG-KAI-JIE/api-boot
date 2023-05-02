@@ -3,4 +3,17 @@
 
 <mapper namespace="top.kjwang.dao.NoticeDao">
 
+    <select id="getList" resultType="top.kjwang.entity.NoticeEntity">
+        SELECT t1.*
+        FROM t_notice t1 WHERE deleted = 0
+        <if test="title != null and title.trim() != ''">
+            AND t1.title LIKE CONCAT('%',#{title},'%')
+        </if>
+        <if test="content != null and content.trim() != ''">
+            AND t1.content LIKE CONCAT('%',#{content},'%')
+        </if>
+        <if test="beginTime != null and endTime != null">
+            AND t1.create_time BETWEEN #{beginTime} AND #{endTime}
+        </if>
+    </select>
 </mapper>
