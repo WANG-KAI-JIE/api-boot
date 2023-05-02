@@ -10,7 +10,10 @@ import org.apache.ibatis.annotations.Mapper;
 import top.kjwang.mybatis.dao.BaseDao;
 import top.kjwang.rbac.entity.SysUserRoleEntity;
 
+import java.util.List;
+
 @Mapper
 public interface SysUserRoleDao extends BaseDao<SysUserRoleEntity> {
 
+	List<Long> getRoleIdList(Long userId);
 }

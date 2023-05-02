@@ -19,7 +19,7 @@ import java.util.Date;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-@Schema(description = "菜单")
+@Schema(description = "菜单vo")
 public class SysMenuVO extends TreeNode<SysMenuVO> {
     @Schema(description = "菜单名称")
     @NotBlank(message = "菜单名称不能为空")

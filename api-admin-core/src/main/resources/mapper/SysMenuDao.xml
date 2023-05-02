@@ -28,7 +28,6 @@
         WHERE deleted = 0
     </select>
 
-
     <select id="getUserAuthorityList" resultType="string">
         SELECT t3.authority
         FROM sys_user_role t1

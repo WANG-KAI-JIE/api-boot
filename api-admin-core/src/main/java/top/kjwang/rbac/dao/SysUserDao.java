@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * @author kjwang
  * @date 2023/4/23 22:35
- * @description SysUserDao 系统用户管理 dao
+ * @description SysUserDao 系统用户 dao
  */
 
 @Mapper
@@ -20,10 +20,10 @@ public interface SysUserDao extends BaseDao<SysUserEntity> {
     /**
      * 根据用户名查找用户
      *
-     * @param username
+     * @param username 用户名
      * @return SysUserEntity
      */
-    default SysUserEntity getByUsername(String username){
+    default SysUserEntity getByUsername(String username) {
         return this.selectOne(new QueryWrapper<SysUserEntity>().eq("username", username));
     }
 
@@ -33,8 +33,8 @@ public interface SysUserDao extends BaseDao<SysUserEntity> {
      * @param mobile 手机号
      * @return SysUserEntity
      */
-    default SysUserEntity getByMobile(String mobile){
-        return this.selectOne(new QueryWrapper<SysUserEntity>().eq("mobile",mobile));
+    default SysUserEntity getByMobile(String mobile) {
+        return this.selectOne(new QueryWrapper<SysUserEntity>().eq("mobile", mobile));
     }
 
     /**
@@ -43,13 +43,23 @@ public interface SysUserDao extends BaseDao<SysUserEntity> {
      * @param params 参数
      * @return List<SysUserEntity>
      */
-    List<SysUserEntity> getList(Map<String,Object> params);
+    List<SysUserEntity> getList(Map<String, Object> params);
 
     /**
-     * 根据id查询用户信息
+     * 根据 id 查询用户信息
      *
      * @param id id
      * @return SysUserEntity
      */
     SysUserEntity getById(@Param("id") Long id);
+
+    /**
+     * 获取指定角色的所有用户
+     *
+     * @param params 查询参数
+     * @return List<SysUserEntity>
+     */
+    List<SysUserEntity> getRoleUserList(Map<String, Object> params);
+
+
 }

@@ -3,4 +3,5 @@
 
 <mapper namespace="top.kjwang.rbac.dao.SysUserRoleDao">
 
+    <select id="getRoleIdList" resultType="java.lang.Long"></select>
 </mapper>

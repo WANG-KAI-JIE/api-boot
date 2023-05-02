@@ -17,7 +17,7 @@ import top.kjwang.mybatis.service.impl.BaseServiceImpl;
 import top.kjwang.rbac.convert.SysUserConvert;
 import top.kjwang.rbac.dao.SysUserDao;
 import top.kjwang.rbac.entity.SysUserEntity;
-import top.kjwang.rbac.entity.SysUserQuery;
+import top.kjwang.rbac.query.SysUserQuery;
 import top.kjwang.rbac.enums.SuperAdminEnum;
 import top.kjwang.rbac.service.SysUserService;
 import top.kjwang.rbac.vo.SysUserExcelVO;

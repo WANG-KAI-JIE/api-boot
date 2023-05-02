@@ -24,17 +24,24 @@
     </select>
 
     <select id="getById" resultType="top.kjwang.rbac.entity.SysUserEntity">
-        SELECT  t1.*
+        SELECT t1.*
         FROM sys_user t1
         WHERE t1.id = #{id}
-        AND t1.deleted = 0
-    </select>
-
-
-    <select id="getByMobile" resultType="top.kjwang.rbac.entity.SysUserEntity">
-        SELECT  t1.*
-        FROM sys_user t1
-        WHERE t1.mobile = #{mobile}
           AND t1.deleted = 0
     </select>
+
+    <select id="getRoleUserList" resultType="top.kjwang.rbac.entity.SysUserEntity">
+        SELECT t1.* FROM sys_user t1 LEFT JOIN sys_user_role t2 ON t1.id = t2.user_id
+        WHERE t1.deleted = 0 AND t2.deleted = 0 AND t2.role_id = #{roleId}
+        <if test="username != null and username.trim() != ''">
+            AND t1.username = #{username}
+        </if>
+        <if test="mobile != null and mobile.trim() != ''">
+            AND t1.mobile = #{mobile}
+        </if>
+        <if test="gender != null">
+            AND t1.gender = #{gender}
+        </if>
+    </select>
+
 </mapper>

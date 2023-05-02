@@ -4,7 +4,7 @@ import org.springframework.web.multipart.MultipartFile;
 import top.kjwang.common.utils.PageResult;
 import top.kjwang.mybatis.service.BaseService;
 import top.kjwang.rbac.entity.SysUserEntity;
-import top.kjwang.rbac.entity.SysUserQuery;
+import top.kjwang.rbac.query.SysUserQuery;
 import top.kjwang.rbac.vo.SysUserVO;
 
 import java.util.List;
